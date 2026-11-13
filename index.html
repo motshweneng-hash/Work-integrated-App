@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Escape SA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone-shell">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <!-- LOGO FIXED - was canva:// now logo.png -->
+    <a class="nav-logo" href="#splash">
+      <img src="logo.png" alt="Adventure Escape SA Logo">
+      <span>Adventure Escape SA</span>
+    </a>
+    <select id="experienceNav" class="experience-select" onchange="goToPackage(this.value)">
+      <option value="">Experiences</option>
+      <option value="ultimate">Ultimate Adventure Day</option>
+      <option value="family">Family explorer package</option>
+      <option value="zipline">Ziplining adventure</option>
+      <option value="mountain">Mountain adventure package</option>
+      <option value="kayak">Kayaking experience</option>
+      <option value="climb">Rock climbing session</option>
+      <option value="corporate">Corporate team challenge</option>
+    </select>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+  <nav id="mobileLinks" class="mobile-links">
+    <a href="#home">Home</a><a href="#experiences">Experiences</a><a href="#calculate-fees">Calculate Fees</a><a href="#about-us">About Us</a><a href="#contact-us">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+  <!-- SPLASH - LOGO HERE TOO -->
+  <section id="splash" class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">WESTERN CAPE ADVENTURES</span>
+        <h1>Welcome to Adventure Escape SA</h1>
+        <p>Today is a good day to go camping</p>
+        <a href="#home" class="pill-button warm">Enter Home</a>
+      </div>
+      <div class="hero-art">
+        <img src="logo.png" alt="Adventure Escape SA Logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME -->
+  <section id="home" class="section-wrap">
+    <span class="eyebrow">YOUR NEXT ESCAPE STARTS HERE</span>
+    <h2>Welcome to Adventure Escape SA</h2>
+    <p class="intro">Discover outdoor experiences, shared moments and fresh perspectives in the Western Cape.</p>
+    <div class="highlight-row"><span>✦ Outdoor adventures</span><span>✦ Guided experiences</span><span>✦ Group moments</span></div>
+    <div class="actions">
+      <a href="#experiences" class="pill-button secondary">Packages</a>
+      <a href="#calculate-fees" class="pill-button primary">Book now</a>
+    </div>
+    <div class="photo-grid">
+      <img src="https://images.pexels.com/photos/2743287/pexels-photo-2743287.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Waterfall in lush forest">
+      <img src="https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Camping under starry sky">
+      <img src="https://images.pexels.com/photos/554609/pexels-photo-554609.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hiker in mountains">
+      <img src="https://images.pexels.com/photos/1497585/pexels-photo-1497585.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kayaking on mountain lake">
+      <img src="https://images.pexels.com/photos/10606212/pexels-photo-10606212.png" alt="Group of friends jumping">
+    </div>
+  </section>
+
+  <!-- EXPERIENCES - PICTURES MATCH DESCRIPTION -->
+  <section id="experiences" class="packages-bg">
+    <div class="section-wrap">
+      <span class="eyebrow">FIND YOUR KIND OF ADVENTURE</span>
+      <h2>Experiences / Packages</h2>
+      <div class="package-grid">
+
+        <article class="package-card" id="card-ultimate">
+          <img src="https://images.pexels.com/photos/37276601/pexels-photo-37276601.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ultimate Adventure - bungee jumping thrill">
+          <div class="package-body"><h3>Ultimate Adventure Day</h3><p>R850 per person</p><button class="pill-button primary" onclick="openModal('ultimate')">View details</button></div>
+        </article>
+
+        <article class="package-card" id="card-family">
+          <img src="https://images.pexels.com/photos/17040650/pexels-photo-17040650.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Family Explorer - family exploring forest">
+          <div class="package-body"><h3>Family explorer package</h3><p>R500 per person</p><button class="pill-button primary" onclick="openModal('family')">View details</button></div>
+        </article>
+
+        <article class="package-card" id="card-zipline">
+          <img src="https://images.pexels.com/photos/13663971/pexels-photo-13663971.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ziplining - ziplining through forest">
+          <div class="package-body"><h3>Ziplining adventure</h3><p>R750 per person</p><button class="pill-button primary" onclick="openModal('zipline')">View details</button></div>
+        </article>
+
+        <article class="package-card" id="card-mountain">
+          <img src="https://images.pexels.com/photos/2609459/pexels-photo-2609459.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountain Adventure - hikers with snow mountains">
+          <div class="package-body"><h3>Mountain adventure package</h3><p>R1 000 per person</p><button class="pill-button primary" onclick="openModal('mountain')">View details</button></div>
+        </article>
+
+        <article class="package-card" id="card-kayak">
+          <img src="https://images.pexels.com/photos/1497582/pexels-photo-1497582.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kayaking - two people kayaking on lake">
+          <div class="package-body"><h3>Kayaking experience</h3><p>R650 per person</p><button class="pill-button primary" onclick="openModal('kayak')">View details</button></div>
+        </article>
+
+        <article class="package-card" id="card-climb">
+          <img src="https://images.pexels.com/photos/3077882/pexels-photo-3077882.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rock Climbing - climber on cliff at sunset">
+          <div class="package-body"><h3>Rock climbing session</h3><p>R700 per person</p><button class="pill-button primary" onclick="openModal('climb')">View details</button></div>
+        </article>
+
+        <article class="package-card" id="card-corporate">
+          <img src="https://images.pexels.com/photos/7551733/pexels-photo-7551733.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Corporate Challenge - team building in park">
+          <div class="package-body"><h3>Corporate team challenge</h3><p>R950 per person</p><button class="pill-button primary" onclick="openModal('corporate')">View details</button></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATE FEES -->
+  <section id="calculate-fees" class="section-wrap">
+    <span class="eyebrow">PLAN YOUR ESCAPE</span>
+    <h2>Calculate Fees</h2>
+    <form id="bookingForm" onsubmit="return submitBooking(event)">
+      <div class="form-card">
+        <h3>Your details</h3>
+        <label>First name<input id="firstName"></label><span id="firstNameError" class="field-error"></span>
+        <label>Surname<input id="surname"></label><span id="surnameError" class="field-error"></span>
+        <label>Email<input id="email" type="email"></label><span id="emailError" class="field-error"></span>
+        <label>Phone<input id="phone" type="tel"></label><span id="phoneError" class="field-error"></span>
+        <label>Guest count<input id="guests" type="number" min="1" value="1"></label><span id="guestsError" class="field-error"></span>
+        <label>Experience date<input id="experienceDate" type="date"></label><span id="dateError" class="field-error"></span>
+
+        <h3>Select package(s)</h3>
+        <div id="packageChoices">
+          <label class="choice"><input type="checkbox" value="ultimate"> Ultimate Adventure Day · R850</label>
+          <label class="choice"><input type="checkbox" value="family"> Family explorer package · R500</label>
+          <label class="choice"><input type="checkbox" value="zipline"> Ziplining adventure · R750</label>
+          <label class="choice"><input type="checkbox" value="mountain"> Mountain adventure package · R1 000</label>
+          <label class="choice"><input type="checkbox" value="kayak"> Kayaking experience · R650</label>
+          <label class="choice"><input type="checkbox" value="climb"> Rock climbing session · R700</label>
+          <label class="choice"><input type="checkbox" value="corporate"> Corporate team challenge · R950</label>
+        </div>
+        <span id="packageError" class="field-error"></span>
+        <p class="discount-note">Groups of 5 or more receive a 10% discount.</p>
+        <button type="reset" class="pill-button secondary" onclick="resetForm()">Reset</button>
+        <button type="submit" class="pill-button primary">Submit booking</button>
+        <div id="bookingStatus" class="status"></div>
+      </div>
+
+      <aside class="invoice-card">
+        <h3>Review / Invoice Summary</h3>
+        <table class="invoice-table">
+          <tr><th>Subtotal</th><td id="subtotalValue">R0.00</td></tr>
+          <tr><th>VAT (15%)</th><td id="vatValue">R0.00</td></tr>
+          <tr><th>Group discount</th><td id="discountValue">−R0.00</td></tr>
+          <tr class="total"><th>Total</th><td id="totalValue">R0.00</td></tr>
+        </table>
+        <p class="discount-test-note">Discount test: R1 850 x 5 = R9 250; 10% = R925; discounted = R8 325 (before VAT).</p>
+        <button type="button" class="pill-button secondary" onclick="runDiscountTest()">Run discount self-check</button>
+        <p id="discountTestResult" class="status"></p>
+      </aside>
+    </form>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about-us" class="packages-bg"><div class="section-wrap">
+    <span class="eyebrow">THE HEART BEHIND THE ADVENTURE</span>
+    <h2>About Us</h2>
+    <div class="about-location">Adventure Escape SA | Western Cape</div>
+    <div class="info-card"><h3>Vision</h3><p>To create unforgettable escape experiences that are safe, inspiring and accessible to everyone.</p></div>
+    <div class="info-card"><h3>Mission</h3><p>Deliver high-quality adventure activities focused on teamwork, safety, fun and sustainable travel.</p></div>
+    <div class="info-card"><h3>Goals</h3><ul><li>Expand to new locations by 2027.</li><li>Provide successful guided adventure tours.</li><li>Promote eco-friendly outdoor practices.</li></ul></div>
+    <a href="#calculate-fees" class="pill-button warm">Next</a>
+  </div></section>
+
+  <!-- CONTACT -->
+  <section id="contact-us" class="section-wrap">
+    <span class="eyebrow">COME SAY HELLO</span>
+    <h2>Contact Us</h2>
+    <div class="info-card"><h3>Contact details</h3><p>Phone: 011 342 6371<br>Email: info@adventureescapesa.co.za<br>Address: 123 Jones Road, Stellenbosch<br>Western Cape</p></div>
+    <div class="info-card"><h3>Business hours</h3><p>Monday-Friday: 09:00-17:00<br>Sat: 09:00-13:00<br>Sunday: Closed</p></div>
+    <div class="info-card"><h3>Social media</h3><p>Facebook · Instagram · TikTok</p></div>
+    <div class="info-card"><h3>Stellenbosch map</h3><iframe title="Stellenbosch map" style="width:100%;height:220px;border:0;border-radius:14px" src="https://www.google.com/maps?q=Stellenbosch%2C%20South%20Africa&output=embed"></iframe></div>
+  </section>
+</main>
+
+<footer class="site-footer"><p>Adventure Escape SA | Western Cape | Privacy | Terms</p><button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</button></footer>
+
+<nav class="bottom-nav"><a href="#home">⌂<br>Home</a><a href="#experiences">✦<br>Experiences</a><a href="#calculate-fees">▤<br>Calculate Fees</a><a href="#about-us">◉<br>About Us</a><a href="#contact-us">✉<br>Contact Us</a></nav>
+</div>
+
+<div id="detailsModal" class="modal"><div class="modal-card"><h2 id="modalTitle"></h2><p id="modalDescription"></p><button class="pill-button primary" onclick="closeModal()">Close</button></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
